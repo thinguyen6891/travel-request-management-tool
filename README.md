@@ -18,11 +18,10 @@ In this simplified version, there are no email alerts or approval flows, but the
 
 You can check out the tool using the links below:
 
-- [Travel Request Form](https://script.google.com/macros/s/AKfycbxS5zYZKkVoUK4JmvTg_swFCuTaghi6VxtzLsxX4Bzt1E1eHlPt42Ah-8Xah-JuX0RlvA/exec){:target="_blank" rel="noopener"}
-- [Request Management G-Sheet](https://docs.google.com/spreadsheets/d/1KfND3g4JSEKm70cDcEZSWpTZHOB5dSV_58JacnMXt2k){:target="_blank" rel="noopener"}
-- [Travel Expense Dashboard](https://lookerstudio.google.com/reporting/a4809999-064d-49b6-ba9d-f9d4c2560a9c){:target="_blank" rel="noopener"}
-
-[Demo video](https://drive.google.com/file/d/1kDp19loDwlOwoL7Khlt5Y2S3zVFnkhsh/view?usp=sharing){:target="_blank" rel="noopener"}
+- [Travel Request Form](https://script.google.com/macros/s/AKfycbxS5zYZKkVoUK4JmvTg_swFCuTaghi6VxtzLsxX4Bzt1E1eHlPt42Ah-8Xah-JuX0RlvA/exec)
+- [Request Management G-Sheet](https://docs.google.com/spreadsheets/d/1KfND3g4JSEKm70cDcEZSWpTZHOB5dSV_58JacnMXt2k)
+- [Travel Expense Dashboard](https://lookerstudio.google.com/reporting/a4809999-064d-49b6-ba9d-f9d4c2560a9c)
+[Demo video](https://drive.google.com/file/d/1kDp19loDwlOwoL7Khlt5Y2S3zVFnkhsh/view?usp=sharing)
 
 ### A note on app authorization
 
@@ -38,9 +37,9 @@ Since I use my personal G-account to host this app, a warning prompt might appea
 
 
 ## Technology Used
-- [Web App | Apps Script](https://developers.google.com/apps-script/guides/web){:target="_blank" rel="noopener"}
+- [Web App | Apps Script](https://developers.google.com/apps-script/guides/web)
 - HTML5
-- [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/){:target="_blank" rel="noopener"}
-- [jQuery Steps](http://www.jquery-steps.com/){:target="_blank" rel="noopener"}
-- [Google Sheets API](https://developers.google.com/sheets/api/reference/rest){:target="_blank" rel="noopener"}
-- [Locker Studio](https://lookerstudio.google.com){:target="_blank" rel="noopener"}
+- [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [jQuery Steps](http://www.jquery-steps.com/)
+- [Google Sheets API](https://developers.google.com/sheets/api/reference/rest)
+- [Locker Studio](https://lookerstudio.google.com)
