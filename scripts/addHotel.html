@@ -1,0 +1,122 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <h4>Add Hotel</h4>
+    </div>
+  </div>
+  <form id="addHotel" onsubmit="handleHotelAdd(this)">
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="request_id" class="ml-2 mb-1">Request ID</label>
+        <input type="number" class="form-control" id="request_id" name="request_id" placeholder="Enter ID" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <h6 class="col-12 mt-5 ml-2">Traveler Information</h6>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="name" class="ml-2 mb-1">Full name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Full name" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="departmentSelect" class="ml-2 mb-1">Department</label>
+        <select class="custom-select" id="departmentSelect" name="department" aria-label="Select department">
+          <option value="NULL" selected>Department</option>
+          <?!= getSelect("Department",2); ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <h6 class="col-12 mt-5 ml-2">Booking information</h6>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="hotel_name" class="ml-2 mb-1">Hotel name</label>
+        <input type="text" class="form-control" id="hotel_name" name="hotel_name" placeholder="Hotel name" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="location" class="ml-2 mb-1">Location</label>
+        <input type="text" class="form-control" id="location" name="location" placeholder="Location" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="checkin_date" class="ml-2 mb-1">Check-in date</label>
+        <input type="date" class="form-control" id="checkin_date" name="checkin_date" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="checkout_date" class="ml-2 mb-1">Check-out date</label>
+        <input type="date" class="form-control" id="checkout_date" name="checkout_date" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="TRUE" unchecked-value="TRUE" id="breakfast"
+            name="breakfast">
+          <label class="form-check-label" for="breakfast">Breakfast</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col mb-2">
+        <label for="price_per_night" class="ml-2 mb-1">Price per night (€)</label>
+        <input type="number" class="form-control" id="price_per_night" name="price_per_night" placeholder="0.00" min="0"
+          step="0.01" required>
+      </div>
+
+      <div class="col-6 mb-2">
+        <label for="total_amount" class="ml-2 mb-1">Total amount (€)</label>
+        <input type="number" class="form-control" id="total_amount" name="total_amount" placeholder="0.00" min="0"
+          step="0.01" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="paymentSelect" class="ml-2 mb-1">Payment</label>
+        <select class="custom-select" id="paymentSelect" name="paymentSelect" aria-label="Select payment">
+          <option value="NULL" selected>Payment</option>
+          <option value="Rechnung">Rechnung</option>
+          <option value="MC TB">MC TB</option>
+          <option value="Paypal">Paypal</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="booking_code" class="ml-2 mb-1">Booking code</label>
+        <input type="text" class="form-control" id="booking_code" name="booking_code" placeholder="Booking code"
+          required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-12 mb-2">
+        <label for="booked_by" class="ml-2 mb-1">Booked by</label>
+        <input type="text" class="form-control" id="booked_by" name="booked_by" placeholder="Booked by">
+      </div>
+    </div>
+
+    <button class="btn btn-outline-primary btn-block my-3" type="submit">Add to Hotel</button>
+  </form>
+</div>

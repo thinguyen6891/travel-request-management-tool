@@ -1,0 +1,34 @@
+<script>
+
+  /**
+   * Run initializations on sidebar load.
+   */
+
+  // Prevent forms from submitting.
+  function preventFormSubmit() {
+    var forms = document.querySelectorAll('form');
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener('submit', function (event) {
+        event.preventDefault();
+      });
+    }
+  }
+  window.addEventListener('load', preventFormSubmit);
+
+
+  function handleHotelAdd(formObject) {
+    google.script.run.processHotelAdd(formObject);
+    document.getElementById('addHotel').reset();
+  }
+
+  function handleTrainAdd(formObject) {
+    google.script.run.processTrainAdd(formObject);
+    document.getElementById('addTrain').reset();
+  }
+
+  function handleFlightAdd(formObject) {
+    google.script.run.processFlightAdd(formObject);
+    document.getElementById('addFlight').reset();
+  }
+
+</script>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Request Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <?!= include('requestFormStyle'); ?>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img
+                        src="https://lh3.google.com/u/0/d/1K9VdxDOqJ2x1wfdhI-xi2aphA7uNsZWE" alt="logo"></a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onClick="getUrl('?mode=index');">Travel Request Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Travel Policies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="d-flex align-items-center">
+        <div class="container">
+            <p id="thankyou-note" hidden>Thank you for your submission!</p>
+            <form id="wizard" onsubmit="handleFormSubmit(this)">
+                <h3>Travel Types</h3>
+                <section>
+                    <h5 class="bd-wizard-step-title">Step 1</h5>
+                    <h2 class="section-heading">Travel arrangements needed</h2>
+                    <p>Please select your travel options:</p>
+                    <div class="type-checkboxes-wrapper">
+                        <div class="type-checkbox">
+                            <input type="checkbox" name="flight" id="flight" class="type-checkbox-input" value="Flight">
+                            <label for="flight" class="type-checkbox-label">
+                                <span class="label-icon">
+                                    <img src="https://lh3.google.com/u/0/d/11K-xiO_FdsuwdlCtvFJmLiwClRIlvWWL"
+                                        alt="branding" class="label-icon-default">
+                                    <img src="https://lh3.google.com/u/0/d/1YBeIGFvPvtL3fgSicBcivNIMb2_svaCW"
+                                        alt="branding" class="label-icon-active">
+                                </span>
+                                <span class="label-text">Flight</span>
+                            </label>
+                        </div>
+                        <div class="type-checkbox">
+                            <input type="checkbox" name="train" id="train" class="type-checkbox-input" value="Train">
+                            <label for="train" class="type-checkbox-label">
+                                <span class="label-icon">
+                                    <img src="https://lh3.google.com/u/0/d/1WZjOiFuoqzZsyi9NQTUZNnb4Qwcj_eeD"
+                                        alt="branding" class="label-icon-default">
+                                    <img src="https://lh3.google.com/u/0/d/1f2eCb-W6xzNDHaSJerk40n636LX_Evw3"
+                                        alt="branding" class="label-icon-active">
+                                </span>
+                                <span class="label-text">Train</span>
+                            </label>
+                        </div>
+                        <div class="type-checkbox">
+                            <input type="checkbox" name="hotel" id="hotel" class="type-checkbox-input" value="Hotel">
+                            <label for="hotel" class="type-checkbox-label">
+                                <span class="label-icon">
+                                    <img src="https://lh3.google.com/u/0/d/1tReCtt1z2klFabgK600pHRj7B2qW4eQ3"
+                                        alt="branding" class="label-icon-default">
+                                    <img src="https://lh3.google.com/u/0/d/1nkT4QPh8bCRDq3xboNOuystTHSm3cd4r"
+                                        alt="branding" class="label-icon-active">
+                                </span>
+                                <span class="label-text">Hotel</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <h3>Personal Details</h3>
+                <section id="personalDetails">
+                    <h5 class="bd-wizard-step-title">Step 2</h5>
+                    <h2 class="section-heading">Enter your Pesonal Details</h2>
+                    <div class="form-group">
+                        <label for="empName" class="sr-only">Full Name</label>
+                        <input type="text" name="empName" id="empName" class="form-control" placeholder="Full Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="sr-only">Date of Birth</label>
+                        <input type="text" name="dob" id="dob" class="form-control" placeholder="Date of Birth"
+                            onfocus="(this.type='date')" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empEmail" class="sr-only">Email Address</label>
+                        <input type="email" name="empEmail" id="empEmail" class="form-control"
+                            placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select" name="department" id="department" required>
+                            <option value="" selected>Department</option>
+                            <option value="Finance">Finance</option>
+                            <option value="People">People</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Operations">Operations</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Technology">Technology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="travelReason" class="sr-only">Reason for Travel</label>
+                        <input type="text" name="travelReason" id="travelReason" class="form-control"
+                            placeholder="Reason for Travel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supEmail" class="sr-only">Supervisor's Email</label>
+                        <input type="email" name="supEmail" id="supEmail" class="form-control"
+                            placeholder="Supervisor's Email" required>
+                    </div>
+                </section>
+                <h3>Trip Details</h3>
+                <section id="tripDetails">
+                    <h5 class="bd-wizard-step-title">Step 3</h5>
+                    <h2 class="section-heading mb-4">Enter your Trip Details</h2>
+                    <div id="flightDetails">
+                        <h6 class="font-weight-bold">Flight</h6>
+                        <div class="form-group">
+                            <label for="flightDepLoc" class="sr-only">Departure Location</label>
+                            <input type="text" name="flightDepLoc" id="flightDepLoc" class="form-control"
+                                placeholder="Departure Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="flightArrLoc" class="sr-only">Arrival Location</label>
+                            <input type="text" name="flightArrLoc" id="flightArrLoc" class="form-control"
+                                placeholder="Arrival Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="flightDepDate" class="sr-only">Departure Date</label>
+                            <input type="text" name="flightDepDate" id="flightDepDate" class="form-control"
+                                placeholder="Departure Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <label for="flightReDate" class="sr-only">Return Date</label>
+                            <input type="text" name="flightReDate" id="flightReDate" class="form-control"
+                                placeholder="Return Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select" name="flightSeat" id="flightSeat">
+                                <option value="" selected>Seat Preference</option>
+                                <option value="Aisle">Aisle Seat</option>
+                                <option value="Window">Window Seat</option>
+                                <option value="No">No Preferences</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="trainDetails">
+                        <h6 class="font-weight-bold">Train</h6>
+                        <div class="form-group">
+                            <label for="trainDepLoc" class="sr-only">Departure Location</label>
+                            <input type="text" name="trainDepLoc" id="trainDepLoc" class="form-control"
+                                placeholder="Departure Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainArrLoc" class="sr-only">Arrival Location</label>
+                            <input type="text" name="trainArrLoc" id="trainArrLoc" class="form-control"
+                                placeholder="Arrival Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainDepDate" class="sr-only">Departure Date</label>
+                            <input type="text" name="trainDepDate" id="trainDepDate" class="form-control"
+                                placeholder="Departure Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainReDate" class="sr-only">Return Date</label>
+                            <input type="text" name="trainReDate" id="trainReDate" class="form-control"
+                                placeholder="Return Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select" name="trainSeat" id="trainSeat">
+                                <option value="" selected>Seat Preference</option>
+                                <option value="Aisle">Aisle Seat</option>
+                                <option value="Table">Table Seat</option>
+                                <option value="Window">Window Seat</option>
+                                <option value="No">No Preferences</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="hotelDetails">
+                        <h6 class="font-weight-bold">Hotel</h6>
+                        <div class="form-group">
+                            <label for="hotelLoc" class="sr-only">Preferred Hotel Location</label>
+                            <input type="text" name="hotelLoc" id="hotelLoc" class="form-control"
+                                placeholder="Preferred Hotel Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkinDate" class="sr-only">Check-in Date</label>
+                            <input type="text" name="checkinDate" id="checkinDate" class="form-control"
+                                placeholder="Check-in Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkoutDate" class="sr-only">Check-out Date</label>
+                            <input type="text" name="checkoutDate" id="checkoutDate" class="form-control"
+                                placeholder="Check-out Date" onfocus="(this.type='date')">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Yes" unchecked-value="No"
+                                name="breakfast" id="breakfast">
+                            <label class="form-check-label" for="breakfast">Breakfast included</label>
+                        </div>
+                    </div>
+                </section>
+                <h3>Request Summary</h3>
+                <section id="requestSummary">
+                    <h5 class="bd-wizard-step-title">Step 4</h5>
+                    <h2 class="section-heading mb-5">Review your Request Details and Submit</h2>
+                    <h6 class="font-weight-bold">Personal Details</h6>
+                    <p class="mb-4">
+                        <span id="enteredempName"></span> <br>
+                        DOB: <span id="entereddob"></span> <br>
+                        Email: <span id="enteredempEmail"></span> <br>
+                        Department: <span id="entereddepartment"></span> <br>
+                        Reason for Travel: <span id="enteredtravelReason"></span> <br>
+                        Supervisor: <span id="enteredsupEmail"></span>
+                    </p>
+                    <h6 class="font-weight-bold">Travel Arrangements needed</h6>
+                    <div id="enteredflightDetails">
+                        <p class="mb-4">
+                            <img src="https://lh3.google.com/u/0/d/11K-xiO_FdsuwdlCtvFJmLiwClRIlvWWL" alt="branding"
+                                class="label-icon-default">
+                            Flight <br>
+                            Departure Location: <span id="enteredflightDepLoc"></span> <br>
+                            Arrival Location: <span id="enteredflightArrLoc"></span> <br>
+                            Departure Date: <span id="enteredflightDepDate"></span> <br>
+                            Return Date: <span id="enteredflightReDate">No</span> <br>
+                            Seat Preference: <span id="enteredflightSeat"></span>
+                        </p>
+                    </div>
+                    <div id="enteredtrainDetails">
+                        <p class="mb-4">
+                            <img src="https://lh3.google.com/u/0/d/1WZjOiFuoqzZsyi9NQTUZNnb4Qwcj_eeD" alt="branding"
+                                class="label-icon-default">
+                            Train <br>
+                            Departure Location: <span id="enteredtrainDepLoc"></span> <br>
+                            Arrival Location: <span id="enteredtrainArrLoc"></span> <br>
+                            Departure Date: <span id="enteredtrainDepDate"></span> <br>
+                            Return Date: <span id="enteredtrainReDate">No</span> <br>
+                            Seat Preference: <span id="enteredtrainSeat"></span>
+                        </p>
+                    </div>
+                    <div id="enteredhotelDetails">
+                        <p class="mb-4">
+                            <img src="https://lh3.google.com/u/0/d/1tReCtt1z2klFabgK600pHRj7B2qW4eQ3" alt="branding"
+                                class="label-icon-default">
+                            Hotel<br>
+                            Location: <span id="enteredhotelLoc"></span> <br>
+                            Check-in Date: <span id="enteredcheckinDate"></span> <br>
+                            Check-out Date: <span id="enteredcheckoutDate"></span> <br>
+                            Breakfast included: <span id="enteredbreakfast"></span>
+                        </p>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <?!= include('stepsJQuery'); ?>
+    <?!= include('wizardJS'); ?>
+</body>
+
+</html>

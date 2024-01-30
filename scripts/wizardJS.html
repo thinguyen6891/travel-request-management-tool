@@ -1,0 +1,62 @@
+<script>
+
+    function loadNewPage(url) {
+        window.open(url, "_top");
+    }
+
+    function getUrl() {
+        google.script.run.withSuccessHandler(loadNewPage)
+            .getScriptURL();
+    }
+
+    $(document).ready(function () { // Wait until document is fully parsed
+        $("form").on("submit", function (e) {
+            e.preventDefault();
+        });
+    })
+
+    function handleFormSubmit(formObject) {
+        google.script.run.processRequestForm(formObject);
+    }
+
+    $("#wizard").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "none",
+        stepsOrientation: "vertical",
+        titleTemplate: '<span class="number">#index#</span>',
+        onStepChanged: function (event, currentIndex, newIndex) {
+            if (currentIndex == 1) {
+                const types = ["flight", "train", "hotel"];
+                for (const element of types) {
+                    if ($("#" + element).is(":checked")) {
+                        $("#" + element + "Details").show();
+                    } else {
+                        $("#" + element + "Details").hide();
+                    }
+                }
+            };
+            if (currentIndex == 3) {
+                const types = ["flight", "train", "hotel"];
+                for (const element of types) {
+                    if ($("#" + element).is(":checked")) {
+                        $("#entered" + element + "Details").show();
+                    } else {
+                        $("#entered" + element + "Details").hide();
+                    }
+                }
+            };
+        },
+        onFinished: function (event, currentIndex) {
+            const form = $(this)
+            form.submit();
+            form.hide();
+            $("#thankyou-note").removeAttr("hidden");
+        }
+    });
+
+    $("input, select").on("change", function (e) {
+        $("#entered" + e.target.id).text(e.target.value);
+    });
+
+</script>
