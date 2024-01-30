@@ -21,7 +21,7 @@ You can check out the tool using the links below:
 - [Travel Request Form](https://script.google.com/macros/s/AKfycbxS5zYZKkVoUK4JmvTg_swFCuTaghi6VxtzLsxX4Bzt1E1eHlPt42Ah-8Xah-JuX0RlvA/exec)
 - [Request Management G-Sheet](https://docs.google.com/spreadsheets/d/1KfND3g4JSEKm70cDcEZSWpTZHOB5dSV_58JacnMXt2k)
 - [Travel Expense Dashboard](https://lookerstudio.google.com/reporting/a4809999-064d-49b6-ba9d-f9d4c2560a9c)
-[Demo video](https://drive.google.com/file/d/1kDp19loDwlOwoL7Khlt5Y2S3zVFnkhsh/view?usp=sharing)
+- [Demo video](https://drive.google.com/file/d/1kDp19loDwlOwoL7Khlt5Y2S3zVFnkhsh/view?usp=sharing)
 
 ### A note on app authorization
 
